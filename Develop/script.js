@@ -15,10 +15,8 @@ var promptLength = function() {
     else { (console.log(charNum));
     }
 };
-
 // Select whether to use special characters or not
-
-var selectCharacterTypes = function() {
+var selectSpecialChar = function() {
   confirmSpecial = window.confirm("Would you like to include special characters in your password?")
     if (confirmSpecial === true) {
       console.log(true);
@@ -27,9 +25,7 @@ var selectCharacterTypes = function() {
       console.log(false);
     }
   };
-
 // Select whether to use lowercase characters or not
-
 var selectLowerCase = function() {
   confirmLowerCase = window.confirm("Would you like to include lowercase characters in your password?")
     if (confirmLowerCase === true) {
@@ -39,9 +35,7 @@ var selectLowerCase = function() {
       console.log(false);
     }
   };
-
 // Select whether to use uppercase characters or not
-
   var selectUpperCase = function() {
   confirmUpperCase = window.confirm("Would you like to include uppercase characters in your password?")
     if (confirmUpperCase === true) {
@@ -51,9 +45,7 @@ var selectLowerCase = function() {
       console.log(false);
     }
   };
-
 // Select whether to use numeric characters or not
-
 var selectNumeric = function() {
   confirmNumericChars = window.confirm("Would you like to include numeric characters in your password?")
     if (confirmNumericChars === true) {
@@ -63,7 +55,6 @@ var selectNumeric = function() {
       console.log(false);
     }
   };
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -71,9 +62,10 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   //var password = generatePassword();
   //var passwordText = document.querySelector("#password");
-  promptLength();
   
-  selectCharacterTypes();
+  promptLength();
+
+  selectSpecialChar();
 
   selectLowerCase();
 
