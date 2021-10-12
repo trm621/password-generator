@@ -26,6 +26,11 @@ var selectCharacterTypes = function() {
     else {
       console.log(false);
     }
+  };
+
+// Select whether to use lowercase characters or not
+
+var selectLowerCase = function() {
   confirmLowerCase = window.confirm("Would you like to include lowercase characters in your password?")
     if (confirmLowerCase === true) {
       console.log(true);
@@ -33,6 +38,11 @@ var selectCharacterTypes = function() {
       else {
       console.log(false);
     }
+  };
+
+// Select whether to use uppercase characters or not
+
+  var selectUpperCase = function() {
   confirmUpperCase = window.confirm("Would you like to include uppercase characters in your password?")
     if (confirmUpperCase === true) {
       console.log(true);
@@ -40,6 +50,11 @@ var selectCharacterTypes = function() {
       else {
       console.log(false);
     }
+  };
+
+// Select whether to use numeric characters or not
+
+var selectNumeric = function() {
   confirmNumericChars = window.confirm("Would you like to include numeric characters in your password?")
     if (confirmNumericChars === true) {
       console.log(true);
@@ -57,7 +72,14 @@ function writePassword() {
   //var password = generatePassword();
   //var passwordText = document.querySelector("#password");
   promptLength();
+  
   selectCharacterTypes();
+
+  selectLowerCase();
+
+  selectUpperCase();
+
+  selectNumeric();
 
   //passwordText.value = password;
 };
