@@ -40,11 +40,11 @@ var selectChars = function() {
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+var passwordText = document.getElementById("#password");
 
 // Write password to the #password input
 function writePassword() {
   //var password = generatePassword();
-  var passwordText = document.querySelector("#password");
   
   promptLength();
   selectChars();
