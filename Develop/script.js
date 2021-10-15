@@ -24,46 +24,18 @@ var promptLength = function() {
     else { (console.log(charNum));
     }
 };
-// Select whether to use special characters or not
-var selectSpecialChar = function() {
+
+var selectChars = function() {
+  // Select whether to use special characters or not
   confirmSpecial = window.confirm("Would you like to include special characters in your password?")
-    if (confirmSpecial === true) {
-      console.log(true);
-      }
-    else {
-      console.log(false);
-    }
-  };
-// Select whether to use lowercase characters or not
-var selectLowerCase = function() {
+  // Select whether to use lowercase letters or not
   confirmLowerCase = window.confirm("Would you like to include lowercase characters in your password?")
-    if (confirmLowerCase === true) {
-      console.log(true);
-      }
-      else {
-      console.log(false);
-    }
-  };
-// Select whether to use uppercase characters or not
-  var selectUpperCase = function() {
+  // Select whether to use uppercase characters or not
   confirmUpperCase = window.confirm("Would you like to include uppercase characters in your password?")
-    if (confirmUpperCase === true) {
-      console.log(true);
-      } 
-      else {
-      console.log(false);
-    }
+  // Select whether to use numeric characters or not
+  confirmNumeric = window.confirm("Would you like to include numeric characters in your password?")
   };
-// Select whether to use numeric characters or not
-var selectNumeric = function() {
-  confirmNumericChars = window.confirm("Would you like to include numeric characters in your password?")
-    if (confirmNumericChars === true) {
-      console.log(true);
-      }
-      else {
-      console.log(false);
-    }
-  };
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -73,17 +45,22 @@ function writePassword() {
   //var passwordText = document.querySelector("#password");
   
   promptLength();
-
-  selectSpecialChar();
-
-  selectLowerCase();
-
-  selectUpperCase();
-
-  selectNumeric();
+  selectChars();
+  // if no option is chosen, alert the user they must pick a valid option and start the choice selection over
+  if (!confirmSpecial && !confirmUpperCase && !confirmLowerCase && !confirmNumeric) {
+    window.alert("You must select at least one option!")
+    return selectChars();
+  }
+  //else if (confirmSpecial && confirmUpperCase && confirmLowerCase)
+  
 
   //passwordText.value = password;
 };
+
+console.log(confirmLowerCase);
+console.log(confirmUpperCase);
+console.log(confirmSpecial);
+console.log(confirmNumeric);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
