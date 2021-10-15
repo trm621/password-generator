@@ -9,6 +9,8 @@ var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
 var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
 "<", ">", "?", "@", "[", "]", "/", "^", "_", "{", "}", "|", "~", "`", "=", ".", ","];
 
+var selections;
+
 // Random number select
 var randomNum = Math.floor(Math.random() * 9);
   console.log(randomNum);
@@ -22,6 +24,7 @@ var generatePassword = function() {
     return generatePassword();
     }
     else { (console.log(charNum));
+      
   // Select whether to use special characters or not
   confirmSpecial = window.confirm("Would you like to include special characters in your password?")
   // Select whether to use lowercase letters or not
@@ -49,7 +52,7 @@ function writePassword() {
 
   // if all character types are selected
   else if (confirmSpecial && confirmUpperCase && confirmLowerCase && confirmNumeric) {
-
+    passwordText = specialChars.concat(upperCaseChars, lowerCaseChars, randomNum)
   }
 
   // if special, uppercase, and lowercase characters are selected
@@ -117,7 +120,7 @@ function writePassword() {
 
   }
   
-  //passwordText.value = password;
+passwordText.value = password;
 };
 
 // Add event listener to generate button
