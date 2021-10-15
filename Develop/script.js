@@ -54,11 +54,55 @@ function writePassword() {
     return selectChars();
   }
   else if (confirmSpecial && confirmUpperCase && confirmLowerCase) {
-    return passwordText = textContent(specialChars + upperCaseChars + lowerCaseChars)
-  };
+    return passwordText = specialChars + upperCaseChars + lowerCaseChars
+  }
+  else if (confirmSpecial && confirmUpperCase && confirmNumeric) {
 
+  }
+  else if (confirmSpecial && confirmLowerCase && confirmNumeric) {
+
+  }
+
+  else if (confirmLowerCase && confirmUpperCase && confirmNumeric) {
+
+  }
+
+  else if (confirmNumeric && confirmLowerCase) {
+
+  }
   
+  else if (confirmNumeric && confirmUpperCase) {
 
+  }
+
+  else if (confirmNumeric && confirmSpecial) {
+
+  }
+
+  else if (confirmSpecial && confirmUpperCase) {
+
+  }
+
+  else if (confirmSpecial && confirmLowerCase) {
+
+  }
+ 
+  else if (confirmSpecial) {
+
+  }
+
+  else if (confirmUpperCase) {
+
+  }
+
+  else if (confirmLowerCase) {
+
+  }
+
+  else if (confirmNumeric) {
+
+  }
+  
   //passwordText.value = password;
 };
 
