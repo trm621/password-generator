@@ -1,12 +1,12 @@
 // Character arrays
 
-const upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
 "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-const lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
 "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-const specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
+var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
 "<", ">", "?", "@", "[", "]", "/", "^", "_", "{", "}", "|", "~", "`", "=", ".", ","];
 
 // Random number select
@@ -25,6 +25,8 @@ var promptLength = function() {
     }
 };
 
+// Select what kinds of characters the password will contain
+
 var selectChars = function() {
   // Select whether to use special characters or not
   confirmSpecial = window.confirm("Would you like to include special characters in your password?")
@@ -42,7 +44,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   //var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector("#password");
   
   promptLength();
   selectChars();
@@ -51,16 +53,14 @@ function writePassword() {
     window.alert("You must select at least one option!")
     return selectChars();
   }
-  //else if (confirmSpecial && confirmUpperCase && confirmLowerCase)
+  else if (confirmSpecial && confirmUpperCase && confirmLowerCase) {
+    return passwordText = textContent(specialChars + upperCaseChars + lowerCaseChars)
+  };
+
   
 
   //passwordText.value = password;
 };
-
-console.log(confirmLowerCase);
-console.log(confirmUpperCase);
-console.log(confirmSpecial);
-console.log(confirmNumeric);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
