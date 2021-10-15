@@ -9,6 +9,13 @@ var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
 var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
 "<", ">", "?", "@", "[", "]", "/", "^", "_", "{", "}", "|", "~", "`", "=", ".", ","];
 
+var characterSelections;
+
+var confirmSpecial;
+var confirmLowerCase;
+var confirmUpperCase;
+var confirmNumeric;
+
 // Random number select
 var randomNum = Math.floor(Math.random() * 9);
   console.log(randomNum);
@@ -54,7 +61,7 @@ function writePassword() {
 
   // if special, uppercase, and lowercase characters are selected
   else if (confirmSpecial && confirmUpperCase && confirmLowerCase) {
-    return passwordText = specialChars + upperCaseChars + lowerCaseChars
+
   }
 
   // if special, uppercase, and numeric characters are selected
