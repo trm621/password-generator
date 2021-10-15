@@ -13,7 +13,7 @@ var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
 var randomNum = Math.floor(Math.random() * 9);
   console.log(randomNum);
 
-// Select the length of the password
+// Select the length of the password and what kind of characters to use
 
 var generatePassword = function() {
   var charNum = window.prompt("How many characters would you like your password to be?")  
@@ -46,52 +46,73 @@ function writePassword() {
     window.alert("You must select at least one option!")
     return selectChars();
   }
+
+  // if all character types are selected
+  else if (confirmSpecial && confirmUpperCase && confirmLowerCase && confirmNumeric) {
+
+  }
+
+  // if special, uppercase, and lowercase characters are selected
   else if (confirmSpecial && confirmUpperCase && confirmLowerCase) {
     return passwordText = specialChars + upperCaseChars + lowerCaseChars
   }
+
+  // if special, uppercase, and numeric characters are selected
   else if (confirmSpecial && confirmUpperCase && confirmNumeric) {
 
   }
+
+  // if special, lowercase, and numeric characters are selected
   else if (confirmSpecial && confirmLowerCase && confirmNumeric) {
 
   }
 
+  // if lowercase, uppercase, and numeric characters are selected
   else if (confirmLowerCase && confirmUpperCase && confirmNumeric) {
 
   }
 
+  // if only numeric and lowercase characters are selected
   else if (confirmNumeric && confirmLowerCase) {
 
   }
   
+  // if only numeric and uppercase characters are selected
   else if (confirmNumeric && confirmUpperCase) {
 
   }
 
+  // if only numeric and special characters are selected
   else if (confirmNumeric && confirmSpecial) {
 
   }
-
+  
+  // if only special and uppercase characters are selected
   else if (confirmSpecial && confirmUpperCase) {
 
   }
 
+  // if only special and lowercase letters are selected
   else if (confirmSpecial && confirmLowerCase) {
 
   }
  
+  // if only special characters are selected
   else if (confirmSpecial) {
 
   }
 
+  // if only uppercase characterse are selected
   else if (confirmUpperCase) {
 
   }
 
+  // if only lowercase characters are selected
   else if (confirmLowerCase) {
 
   }
 
+  // if only numeric characters are selected
   else if (confirmNumeric) {
 
   }
