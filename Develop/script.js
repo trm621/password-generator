@@ -9,13 +9,11 @@ var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
 var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
 "<", ">", "?", "@", "[", "]", "/", "^", "_", "{", "}", "|", "~", "`", "=", ".", ","];
 
-var selections;
-
-// Random number select
-var randomNum = Math.floor(Math.random() * 9);
-  console.log(randomNum);
+var numericChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 // Select the length of the password and what kind of characters to use
+
+var passwordChars = [];
 
 var generatePassword = function() {
   var charNum = window.prompt("How many characters would you like your password to be?")  
@@ -40,79 +38,29 @@ var generatePassword = function() {
       return generatePassword();
     }
   
-    // if all character types are selected
-    if (confirmSpecial && confirmUpperCase && confirmLowerCase && confirmNumeric) {
-      
+    // use special characters if they are selected
+    if (confirmSpecial) {
+      passWordChars = passWordChars.concat(specialChars)
     }
   
-    // if special, uppercase, and lowercase characters are selected
-    else if (confirmSpecial && confirmUpperCase && confirmLowerCase) {
-  
+    // use uppercase letters if they are selected
+    if (confirmUpperCase) {
+      passWordChars = passWordChars.concat(upperCaseChars)
     }
   
-    // if special, uppercase, and numeric characters are selected
-    else if (confirmSpecial && confirmUpperCase && confirmNumeric) {
-  
+    // use numeric characters if they are selected
+    if (confirmNumeric) {
+      passWordChars = passWordChars.concat(numericChars)
     }
   
-    // if special, lowercase, and numeric characters are selected
-    else if (confirmSpecial && confirmLowerCase && confirmNumeric) {
-  
-    }
-  
-    // if lowercase, uppercase, and numeric characters are selected
-    else if (confirmLowerCase && confirmUpperCase && confirmNumeric) {
-  
-    }
-  
-    // if only numeric and lowercase characters are selected
-    else if (confirmNumeric && confirmLowerCase) {
-  
-    }
-    
-    // if only numeric and uppercase characters are selected
-    else if (confirmNumeric && confirmUpperCase) {
-  
-    }
-  
-    // if only numeric and special characters are selected
-    else if (confirmNumeric && confirmSpecial) {
-  
-    }
-    
-    // if only special and uppercase characters are selected
-    else if (confirmSpecial && confirmUpperCase) {
-  
-    }
-  
-    // if only special and lowercase letters are selected
-    else if (confirmSpecial && confirmLowerCase) {
-  
-    }
-   
-    // if only special characters are selected
-    else if (confirmSpecial) {
-  
-    }
-  
-    // if only uppercase characterse are selected
-    else if (confirmUpperCase) {
-  
-    }
-  
-    // if only lowercase characters are selected
-    else if (confirmLowerCase) {
-  
-    }
-  
-    // if only numeric characters are selected
-    else if (confirmNumeric) {
+    // use lowercase letters if they are selected
+    if (confirmLowerCase) {
+      passWordChars = passWordChars.concat(lowerCaseChars)
   
     }
 };
 };
 
-var passwordChars = [];
 
 for (var i = 0; i < 0; i++) {
   var stringSelections = selections[Math.random() * selections.length];
