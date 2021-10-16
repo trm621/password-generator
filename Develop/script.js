@@ -11,13 +11,15 @@ var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
 
 var numericChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-// Select the length of the password and what kind of characters to use
-
+// empty array to store selected character types from respective arrays
 var passwordChars = [];
 
+// empty string for concatenation
 var generatedPassword = "";
 
 var generatePassword = function() {
+
+  // Select the length of the password and what kind of characters to use
   var charNum = window.prompt("How many characters would you like your password to be?")  
     if (charNum < 8 || charNum > 128) {
       window.alert("Your password must be at least 8 characters and no more than 128 characters. Please pick a valid option!")
@@ -59,13 +61,15 @@ var generatePassword = function() {
     if (confirmLowerCase) {
       passwordChars = passwordChars.concat(lowerCaseChars)
     }
+
+    // log the newly created password array
     console.log(passwordChars);
 
+    //randomize array and make it the selected length
     for (var i = 0; i < charNum; i++) {
       generatedPassword = generatedPassword + passwordChars[Math.floor(Math.random() * passwordChars.length)];
       console.log(generatedPassword)
     }
-    return generatedPassword
 };
 };
 
