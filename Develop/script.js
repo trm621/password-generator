@@ -11,13 +11,12 @@ var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
 
 var numericChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-// empty array to store selected character types from respective arrays
+// empty array to store selected character type from respective arrays
 var passwordChars = [];
 
 // empty string for concatenation
-var generatedPassword = "";
-
 var generatePassword = function() {
+  var generatedPassword = "";
 
   // Select the length of the password and what kind of characters to use
   var charNum = window.prompt("How many characters would you like your password to be?")  
@@ -68,18 +67,18 @@ var generatePassword = function() {
     //randomize array and make it the selected length
     for (var i = 0; i < charNum; i++) {
       generatedPassword = generatedPassword + passwordChars[Math.floor(Math.random() * passwordChars.length)];
-      console.log(generatedPassword)
+      console.log(generatedPassword);
     }
 };
 };
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-var passwordText = document.getElementById("#password");
 
 // Write password to the #password input
 function writePassword() {
-  password = generatePassword();
+  var password = generatePassword()
+  var passwordText = document.getElementById("#password");
   passwordText.value = password;
 };
 
