@@ -62,10 +62,9 @@ var generatePassword = function() {
     console.log(passwordChars);
 
     for (var i = 0; i < charNum; i++) {
-      generatedPassword = generatedPassword + passwordChars[Math.floor(Math.random() * passwordChars,length)];
+      generatedPassword = generatedPassword + passwordChars[Math.floor(Math.random() * passwordChars.length)];
       console.log(generatedPassword)
     }
-    return generatedPassword;
 };
 };
 
@@ -77,6 +76,7 @@ var passwordText = document.getElementById("#password");
 function writePassword() {
   password = generatePassword();
   passwordText.value = password;
+  return password;
 };
 
 // Add event listener to generate button
