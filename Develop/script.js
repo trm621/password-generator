@@ -24,7 +24,7 @@ var generatePassword = function() {
     return generatePassword();
     }
     else { (console.log(charNum));
-      
+
   // Select whether to use special characters or not
   confirmSpecial = window.confirm("Would you like to include special characters in your password?")
   // Select whether to use lowercase letters or not
@@ -33,8 +33,91 @@ var generatePassword = function() {
   confirmUpperCase = window.confirm("Would you like to include uppercase characters in your password?")
   // Select whether to use numeric characters or not
   confirmNumeric = window.confirm("Would you like to include numeric characters in your password?")
-  };
+
+  // if no option is chosen, alert the user they must pick a valid option and start the choice selection over
+  while (!confirmSpecial && !confirmUpperCase && !confirmLowerCase && !confirmNumeric) {
+      window.alert("You must select at least one option!")
+      return generatePassword();
+    }
+  
+    // if all character types are selected
+    if (confirmSpecial && confirmUpperCase && confirmLowerCase && confirmNumeric) {
+      
+    }
+  
+    // if special, uppercase, and lowercase characters are selected
+    else if (confirmSpecial && confirmUpperCase && confirmLowerCase) {
+  
+    }
+  
+    // if special, uppercase, and numeric characters are selected
+    else if (confirmSpecial && confirmUpperCase && confirmNumeric) {
+  
+    }
+  
+    // if special, lowercase, and numeric characters are selected
+    else if (confirmSpecial && confirmLowerCase && confirmNumeric) {
+  
+    }
+  
+    // if lowercase, uppercase, and numeric characters are selected
+    else if (confirmLowerCase && confirmUpperCase && confirmNumeric) {
+  
+    }
+  
+    // if only numeric and lowercase characters are selected
+    else if (confirmNumeric && confirmLowerCase) {
+  
+    }
+    
+    // if only numeric and uppercase characters are selected
+    else if (confirmNumeric && confirmUpperCase) {
+  
+    }
+  
+    // if only numeric and special characters are selected
+    else if (confirmNumeric && confirmSpecial) {
+  
+    }
+    
+    // if only special and uppercase characters are selected
+    else if (confirmSpecial && confirmUpperCase) {
+  
+    }
+  
+    // if only special and lowercase letters are selected
+    else if (confirmSpecial && confirmLowerCase) {
+  
+    }
+   
+    // if only special characters are selected
+    else if (confirmSpecial) {
+  
+    }
+  
+    // if only uppercase characterse are selected
+    else if (confirmUpperCase) {
+  
+    }
+  
+    // if only lowercase characters are selected
+    else if (confirmLowerCase) {
+  
+    }
+  
+    // if only numeric characters are selected
+    else if (confirmNumeric) {
+  
+    }
 };
+};
+
+var passwordChars = [];
+
+for (var i = 0; i < 0; i++) {
+  var stringSelections = selections[Math.random() * selections.length];
+  password.push(stringSelections);
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -44,83 +127,8 @@ var passwordText = document.getElementById("#password");
 function writePassword() {
   password = generatePassword();
 
-  // if no option is chosen, alert the user they must pick a valid option and start the choice selection over
-  if (!confirmSpecial && !confirmUpperCase && !confirmLowerCase && !confirmNumeric) {
-    window.alert("You must select at least one option!")
-    return generatePassword();
-  }
 
-  // if all character types are selected
-  else if (confirmSpecial && confirmUpperCase && confirmLowerCase && confirmNumeric) {
-    passwordText = specialChars.concat(upperCaseChars, lowerCaseChars, randomNum)
-  }
-
-  // if special, uppercase, and lowercase characters are selected
-  else if (confirmSpecial && confirmUpperCase && confirmLowerCase) {
-
-  }
-
-  // if special, uppercase, and numeric characters are selected
-  else if (confirmSpecial && confirmUpperCase && confirmNumeric) {
-
-  }
-
-  // if special, lowercase, and numeric characters are selected
-  else if (confirmSpecial && confirmLowerCase && confirmNumeric) {
-
-  }
-
-  // if lowercase, uppercase, and numeric characters are selected
-  else if (confirmLowerCase && confirmUpperCase && confirmNumeric) {
-
-  }
-
-  // if only numeric and lowercase characters are selected
-  else if (confirmNumeric && confirmLowerCase) {
-
-  }
-  
-  // if only numeric and uppercase characters are selected
-  else if (confirmNumeric && confirmUpperCase) {
-
-  }
-
-  // if only numeric and special characters are selected
-  else if (confirmNumeric && confirmSpecial) {
-
-  }
-  
-  // if only special and uppercase characters are selected
-  else if (confirmSpecial && confirmUpperCase) {
-
-  }
-
-  // if only special and lowercase letters are selected
-  else if (confirmSpecial && confirmLowerCase) {
-
-  }
- 
-  // if only special characters are selected
-  else if (confirmSpecial) {
-
-  }
-
-  // if only uppercase characterse are selected
-  else if (confirmUpperCase) {
-
-  }
-
-  // if only lowercase characters are selected
-  else if (confirmLowerCase) {
-
-  }
-
-  // if only numeric characters are selected
-  else if (confirmNumeric) {
-
-  }
-  
-passwordText.value = password;
+//passwordText.value = password;
 };
 
 // Add event listener to generate button
