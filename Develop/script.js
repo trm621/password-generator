@@ -40,32 +40,26 @@ var generatePassword = function() {
   
     // use special characters if they are selected
     if (confirmSpecial) {
-      passWordChars = passWordChars.concat(specialChars)
+      passwordChars = passwordChars.concat(specialChars)
     }
   
     // use uppercase letters if they are selected
     if (confirmUpperCase) {
-      passWordChars = passWordChars.concat(upperCaseChars)
+      passwordChars = passwordChars.concat(upperCaseChars)
     }
   
     // use numeric characters if they are selected
     if (confirmNumeric) {
-      passWordChars = passWordChars.concat(numericChars)
+      passwordChars = passwordChars.concat(numericChars)
     }
   
     // use lowercase letters if they are selected
     if (confirmLowerCase) {
-      passWordChars = passWordChars.concat(lowerCaseChars)
-  
+      passwordChars = passwordChars.concat(lowerCaseChars)
     }
+    console.log(passwordChars);
 };
 };
-
-
-for (var i = 0; i < 0; i++) {
-  var stringSelections = selections[Math.random() * selections.length];
-  password.push(stringSelections);
-}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
