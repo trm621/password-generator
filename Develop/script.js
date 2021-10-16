@@ -15,6 +15,8 @@ var numericChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 var passwordChars = [];
 
+var generatedPassword = "";
+
 var generatePassword = function() {
   var charNum = window.prompt("How many characters would you like your password to be?")  
     if (charNum < 8 || charNum > 128) {
@@ -58,6 +60,12 @@ var generatePassword = function() {
       passwordChars = passwordChars.concat(lowerCaseChars)
     }
     console.log(passwordChars);
+
+    for (var i = 0; i < charNum; i++) {
+      generatedPassword = generatedPassword + passwordChars[Math.floor(Math.random() * passwordChars,length)];
+      console.log(generatedPassword)
+    }
+    return generatedPassword;
 };
 };
 
@@ -68,9 +76,7 @@ var passwordText = document.getElementById("#password");
 // Write password to the #password input
 function writePassword() {
   password = generatePassword();
-
-
-//passwordText.value = password;
+  passwordText.value = password;
 };
 
 // Add event listener to generate button
