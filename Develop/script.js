@@ -75,7 +75,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   password = generatePassword();
-  var passwordText = document.getElementById("#password");
+  var passwordText = document.getElementById("password");
   passwordText.value = password;
 };
 
