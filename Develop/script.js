@@ -1,22 +1,19 @@
 // Character arrays
 
-var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-"K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-"l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";",
-"<", ">", "?", "@", "[", "]", "/", "^", "_", "{", "}", "|", "~", "`", "=", ".", ","];
-
+var upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var specialChars = ["!", "#", "$", "%", "&", "(", ")", "*", "-", "+", ":", ";", "<", ">", "?", "@", "[", "]", "/", "^", "_", "{", "}", "|", "~", "`", "=", ".", ","];
 var numericChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 var generatePassword = function() {
 
   // empty array to store selected character type from respective arrays
   var passwordChars = [];
+  // empty string for concatenation
+  var generatedPassword = "";
+
   
-  // Select the length of the password and what kind of characters to use
+  // Select the length of the password and what kind of characters to use and loop back if no valid selection is chosen
   var charNum = window.prompt("How many characters would you like your password to be?")  
     while (charNum < 8 || charNum > 128) {
       window.alert("Your password must be at least 8 characters and no more than 128 characters. Please pick a valid option!")
@@ -38,33 +35,29 @@ var generatePassword = function() {
       return generatePassword();
     }
   
-    // use special characters if they are selected
+    // use special characters and concatenize them if they are selected
     if (confirmSpecial) {
       passwordChars = passwordChars.concat(specialChars)
     }
   
-    // use uppercase letters if they are selected
+    // use uppercase letters and concatenize them if they are selected
     if (confirmUpperCase) {
       passwordChars = passwordChars.concat(upperCaseChars)
     }
   
-    // use numeric characters if they are selected
+    // use numeric characters and concatenize them if they are selected
     if (confirmNumeric) {
       passwordChars = passwordChars.concat(numericChars)
     }
   
-    // use lowercase letters if they are selected
+    // use lowercase letters and concatenize them if they are selected
     if (confirmLowerCase) {
       passwordChars = passwordChars.concat(lowerCaseChars)
     }
 
-    // empty string for concatenation
-    var generatedPassword = "";
-
     //randomize array and make it the selected length
     for (var i = 0; i < charNum; i++) {
-      generatedPassword = generatedPassword + passwordChars[Math.floor(Math.random() * passwordChars.length)]
-      console.log(generatedPassword)
+    generatedPassword = generatedPassword + passwordChars[Math.floor(Math.random() * passwordChars.length)]
     }
     return generatedPassword;
 };
