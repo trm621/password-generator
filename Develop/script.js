@@ -18,9 +18,9 @@ var generatePassword = function() {
   
   // Select the length of the password and what kind of characters to use
   var charNum = window.prompt("How many characters would you like your password to be?")  
-    if (charNum < 8 || charNum > 128) {
+    while (charNum < 8 || charNum > 128) {
       window.alert("Your password must be at least 8 characters and no more than 128 characters. Please pick a valid option!")
-      generatePassword();
+      return generatePassword();
     }
 
   // Select whether to use special characters or not
@@ -33,9 +33,9 @@ var generatePassword = function() {
   confirmNumeric = window.confirm("Would you like to include numeric characters in your password?")
 
   // if no option is chosen, alert the user they must pick a valid option and start the choice selection over
-  if (!confirmSpecial && !confirmUpperCase && !confirmLowerCase && !confirmNumeric) {
+  while (!confirmSpecial && !confirmUpperCase && !confirmLowerCase && !confirmNumeric) {
       window.alert("You must select at least one option!")
-      generatePassword();
+      return generatePassword();
     }
   
     // use special characters if they are selected
